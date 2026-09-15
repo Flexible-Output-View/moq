@@ -9,3 +9,6 @@ moq = ["run", "--bin", "moq", "--"]
 # WebTransport bindings are behind the unstable cfg.
 [target.wasm32-unknown-unknown]
 rustflags = ["--cfg", "getrandom_backend=\"wasm_js\"", "--cfg=web_sys_unstable_apis"]
+
+[target.x86_64-pc-windows-msvc]
+rustflags = ["-Ctarget-feature=-crt-static"]
